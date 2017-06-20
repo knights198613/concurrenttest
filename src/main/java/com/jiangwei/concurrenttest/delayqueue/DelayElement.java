@@ -16,7 +16,7 @@ public class DelayElement implements Delayed {
     }
 
     public long getDelay(TimeUnit unit) {
-        return 3;
+        return -10;
     }
 
     public int compareTo(Delayed o) {
