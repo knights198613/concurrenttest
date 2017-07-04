@@ -1,9 +1,6 @@
 package com.jiangwei.concurrenttest.future;
 
-import java.util.concurrent.ExecutionException;
-import java.util.concurrent.ExecutorService;
-import java.util.concurrent.Executors;
-import java.util.concurrent.FutureTask;
+import java.util.concurrent.*;
 
 /**
  * Created by weijiang
@@ -21,12 +18,18 @@ public class TestFutureTaskClient {
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
-        try {
+        /*try {
             System.out.println("结果："+futureTask.get());
         } catch (InterruptedException e) {
             e.printStackTrace();
         } catch (ExecutionException e) {
             e.printStackTrace();
         }
+        System.out.println("%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%");
+        executorService.shutdownNow();*/
+        ThreadPoolExecutor poolExecutor = (ThreadPoolExecutor)executorService;
+        int i = poolExecutor.getPoolSize();
+        System.out.println("线程池持有线程数："+i);
+        System.out.println("%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%");
     }
 }

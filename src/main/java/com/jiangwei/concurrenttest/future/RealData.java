@@ -16,7 +16,7 @@ public class RealData implements Callable<String> {
     }
 
     public String call() throws Exception {
-        Thread.sleep(5000);
+        Thread.sleep(1000);
         return data;
     }
 }
