@@ -9,6 +9,8 @@ import java.util.concurrent.locks.ReentrantLock;
  */
 public class LockTest {
 
+    ReentrantLock lock = new ReentrantLock();
+
     public static void main(String[] args) {
 
         LockTest lockTest = new LockTest();
@@ -43,7 +45,7 @@ public class LockTest {
 
 
     public void printString() {
-        ReentrantLock lock = new ReentrantLock();
+
             lock.lock();
             if("t1".equals(Thread.currentThread().getName())) {
                 for(int i=1; i<100; i++) {
